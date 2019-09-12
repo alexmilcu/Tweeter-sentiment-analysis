@@ -13,6 +13,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, classification_report, f1_score
 import re
 import numpy as np
+import matplotlib.pyplot as plt
 
 lemma = WordNetLemmatizer()
 stop_words = stopwords.words('english')
@@ -57,10 +58,31 @@ cleaned_tweet.to_csv('cleaned_tweet.csv')
 
 hashtags = pd.DataFrame(columns=['hashtag'])
 hashtags['hashtag'] = df['tweet'].apply(hashtag)
+hashtags['label'] = df['label']
 hashtags.to_csv('hashtags.csv')
 
+# numar tweet uri rasiste/non rasiste
+print(len(df[df.label == 0]), 'Not racist/sexist Tweets')
+print(len(df[df.label == 1]), 'Racist/sexist Tweets')
+
 # cele mai frecvente hashtag uri
-print(FreqDist(list((" ".join(hashtags.loc[:, 'hashtag'])).split())).most_common(10))
+all_hashtags = FreqDist(list((' '.join(hashtags.loc[:, 'hashtag'])).split())).most_common(10)
+hatred_hashtags = FreqDist(list(' '.join(hashtags[hashtags.label == 1].hashtag.values).split())).most_common(10)
+
+print(all_hashtags)
+
+# grafice tweet uri
+plt.figure(figsize=(14, 6))
+ax = plt.subplot(121)
+pd.DataFrame(all_hashtags, columns=['hashtag', 'Count']).set_index('hashtag').plot.barh(ax=ax, fontsize=12)
+plt.xlabel('# occurrences')
+plt.title('Hashtags in all tweets', size=13)
+ax = plt.subplot(122)
+pd.DataFrame(hatred_hashtags, columns=['hashtag', 'Count']).set_index('hashtag').plot.barh(ax=ax, fontsize=12)
+plt.xlabel('# occurrences')
+plt.ylabel('')
+plt.title('Hashtags in hatred tweets', size=13)
+plt.show()
 
 text = []
 
