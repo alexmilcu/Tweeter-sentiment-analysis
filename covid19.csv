@@ -1,5 +1,4 @@
 ﻿Name,Region,Cases_total,Cases - cumulative total per 1 million population,Cases - newly reported in last 7 days,Cases_24hours,Deaths_total,Deaths - cumulative total per 1 million population,Deaths - newly reported in last 7 days,Deaths_24hours,Transmission Classification
-Global,,98794942,12655.778931983245,3999390,514098,2124193,272.11228097958985,95928,11434,
 United States of America,Americas,24775208,74848.97,1218532,170883,414083,1251,21442,3416,Community transmission
 India,South-East Asia,10667736,7730.22,95963,13203,153470,111.21,1051,131,Clusters of cases
 Brazil,Americas,8816254,41476.66,361195,62334,216445,1018.28,7149,1202,Community transmission
