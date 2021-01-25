@@ -1,6 +1,6 @@
 Name,Region,Cases_total,Cases_24hours,Deaths_total,Deaths_24hours
 United States of America,Americas,24775208,170883,414083,3416
-India,South-East Asia,10667736,13203,153470,131
+India,Asia,10667736,13203,153470,131
 Brazil,Americas,8816254,62334,216445,1202
 Russian Federation,Europe,3738690,19290,69918,456
 The United Kingdom,Europe,3647467,30004,97939,610
@@ -14,7 +14,7 @@ Argentina,Americas,1862192,8362,46737,162
 Mexico,Americas,1752347,20057,149084,1470
 Poland,Europe,1478119,2674,35401,38
 South Africa,Africa,1412986,8147,40874,300
-Iran (Islamic Republic of),Eastern Mediterranean,1372977,5945,57383,89
+Iran,Asia,1372977,5945,57383,89
 Ukraine,Europe,1194328,2516,21924,63
 Peru,Americas,1093938,5842,39608,181
-Indonesia,South-East Asia,989262,11788,27835,171
+Indonesia,Asia,989262,11788,27835,171
